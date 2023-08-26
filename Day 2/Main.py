@@ -15,5 +15,7 @@ def main():
 
     print("Addition of two numbers is :", Answer)
 
-if __name__ == "__main__":
+if __name__ == "__main__": #starter
     main()
+
+print(__name__) #displays name of current module
