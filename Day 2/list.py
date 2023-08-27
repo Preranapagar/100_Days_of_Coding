@@ -19,3 +19,19 @@ print("accessing list elements using loop :")
 for i in data:
     print(i)
 
+#while loop with list
+
+i = 0
+while i<len(data):
+    print(data[i])
+    i = i + 1
+
+#create a list getting inputs from user
+new_list = []
+length = int(input("Enter length of list :"))
+
+for i in range(length):
+    new_list.append(int(input("enter the element :")))
+
+print(new_list)
+
