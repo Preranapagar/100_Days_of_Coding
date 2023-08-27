@@ -1,4 +1,4 @@
-#Function 
+#Function accepts parameter returns nothing
 
 def Marvellous(Name,Age,City):
     print("Inside Marvellous Function")
@@ -8,6 +8,7 @@ def Marvellous(Name,Age,City):
 
 def main():
     Marvellous("Amit",28,"Pune")
+    Marvellous("Sagar",30,"Nashik")
     
 
 if __name__ == "__main__":
