@@ -22,3 +22,12 @@ i = 5
 while (i<10):
     print(i)
     i = i+1
+
+#if loop
+print("demo of if loop")
+
+num = int(input("Enter the number :"))
+if num % 2 == 0:
+    print("Num is even")
+else:
+    print("Num is odd")
