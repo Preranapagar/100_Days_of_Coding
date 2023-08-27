@@ -8,6 +8,7 @@ def Sub(A,B):
 
 def Marvellous(FPTR1, FPTR2):
     Ans = FPTR1(10,4)
+    print(type(FPTR1))
     print("Addition is :", Ans)
 
     Ans = FPTR2(10,4)
