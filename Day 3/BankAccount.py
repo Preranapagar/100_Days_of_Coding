@@ -52,24 +52,44 @@ def main():
 
     Obj = BankAccount(Name, Balance)
 
-    print("Select below to perform operation on your Account")
-    print("""
-1 . To Check Account Balance
-2 . To Deposit Amount
-3 . To Withdraw Amount
-4 . To Calculate Intrest""")
-    print()
-    
-    op = int(input("Enter :"))
+    def fun2():
+        print("Do you want to continue ? Choose 1 for 'Yes'")
+        Ans = int(input())
 
-    if op == 1:
-        Obj.Display()
-    elif op == 2:
-        Obj.Deposit(int(input("Amount:")))
-    elif op == 3:
-        Obj.Withdraw(int(input("Amountt:")))
-    elif op == 4:
-        Obj.CalculateIntrest()
+        if Ans == 1:
+            fun()
+        else:
+            print("Thank You! Have a Good Day")
+
+
+    def fun():
+
+        print("Select below to perform operation on your Account")
+        print("""
+    1 . To Check Account Balance
+    2 . To Deposit Amount
+    3 . To Withdraw Amount
+    4 . To Calculate Intrest""")
+        print()
+        op = int(input("Enter :"))
+
+        if op == 1:
+            Obj.Display()
+            fun2()
+        elif op == 2:
+            Obj.Deposit(int(input("Amount to Deposit:")))
+            fun2()
+        elif op == 3:
+            Obj.Withdraw(int(input("Amount to Withdraw:")))
+            fun2()
+        elif op == 4:
+            Obj.CalculateIntrest()
+            fun2()
+        else:
+            print("Thank You !")
+
+    fun()
+
 
 
 if __name__=="__main__":
