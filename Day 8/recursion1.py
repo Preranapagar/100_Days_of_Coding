@@ -1,7 +1,10 @@
 
+i = 0
 
 def DisplayF():
-    print("Inside Function")
+    global i
+    print("Inside Function :", i)
+    i += 1
     DisplayF()
 
 def main():
