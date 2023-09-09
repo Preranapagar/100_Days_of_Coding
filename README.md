@@ -8,5 +8,5 @@ Daily Python Coding Challenge starting from 26.08.2023
 * {Day 5 :[Command line arguments]}
 * {Day 6 :[Filter, Map, Reduce, Datetime Module]}
 * {Day 7 :[Game]}
-* {Day 8 :[Exception Handling]}
+* {Day 8 :[Exception Handling, Recursion]}
 
