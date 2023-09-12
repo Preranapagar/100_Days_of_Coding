@@ -11,5 +11,5 @@ Daily Python Coding Challenge starting from 26.08.2023
 * {Day 8 :[Exception Handling, Recursion]}
 * {Day 9 :[Recursion Problem Solving, File Handling, Automation]}
 * {Day 10 :[File Handling Problem Solving]}
-* {Day 11 :[]}
+* {Day 11 :[Decorator]}
 
