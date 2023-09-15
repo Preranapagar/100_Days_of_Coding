@@ -13,7 +13,8 @@ def CheckPerfect(Num):
             div_sum += i
             if i != Num//i:
                 div_sum += Num//i
-            print("i :", i)
+                print("sum :", div_sum)
+            
     
         i += 1
 
