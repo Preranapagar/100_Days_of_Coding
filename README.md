@@ -14,4 +14,4 @@ Daily Python Coding Challenge starting from 26.08.2023
 * {Day 11 :[Decorator]}
 * {Day 12 :[Transpose Matrix, Binary Search Algorithm, Buddy String, Finding Uncommon]}
 * {Day 13 :[Find Missing Number, Reorder]}
-* {Day 14 :[Detect Capital, Perfect Number]}
+* {Day 14 :[Detect Capital, Perfect Number, Relative Ranks]}
