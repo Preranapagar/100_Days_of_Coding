@@ -24,7 +24,7 @@ def main():
     Score_Card = []
 
     for i in range(Players):
-        Score_Card.append(int(input(f"Enter the Score of {i}th Player :")))
+        Score_Card.append(int(input(f"Enter the Score of {i+1}th Player :")))
 
     Ranking = RankCard(Score_Card)
     print("Ranking :", Ranking)
