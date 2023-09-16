@@ -1,3 +1,4 @@
+#check even number using filter
 
 def CheckEeven(No):
     if No % 2 == 0:
