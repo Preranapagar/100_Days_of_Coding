@@ -21,10 +21,14 @@ def DirectoyTravel(DirName):
                 print("Subfolder Name is :", subname)
 
             for fname in filename:
-                print(fname)
-                path =os.path.abspath(fname)
+                path = os.path.abspath(fname)
                 print(path)
-                print(os.path.getsize(path))
+                print("path :", path)
+                file_size = os.path.getsize(path)
+                print(file_size)
+                # file_size = os.stat(path)
+                # print(f"{fname} : {file_size.st_size} bytes")
+        
 
     else:
         print("Invalid Path")
