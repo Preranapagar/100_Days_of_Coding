@@ -5,6 +5,10 @@ def DirectoyTravel(DirName):
     print("We are going to scan the Directory :", DirName)
 
     for foldername, subfoldername, filename in os.walk(DirName):
+        print("Current Directory Name :", foldername)
+
+        for subname in subfoldername:
+            print("Subfolder Name is :", subname)
         for fname in filename:
             print(fname)
 
