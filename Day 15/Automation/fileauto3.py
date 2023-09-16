@@ -10,9 +10,10 @@ def DirectoyTravel(DirName):
 
         for subname in subfoldername:
             print("Subfolder Name is :", subname)
+
         for fname in filename:
             print(fname)
-            print("File Size :", os.path.getsize(fname))
+            print("File Size :", os.path.getsize(foldername+'/'+fname),"bytes")
 
 def main():
     print("_______________Automation Script_______________")
