@@ -28,27 +28,37 @@ def DisplayChecksum(path):
             for filen in fileList:
                 path = os.path.join(dirName,filen)
                 file_hash = hashfile(path)
-        print("Error: Invalid Number of aurguments")
+                print(path)
+                print(file_hash)
+                print(' ')
+
+        else:
+            print("Invalid Path")
+
+def main():
+    print("__________________________________________Application__________________________________________")
+    print("Application Name :", argv[0])
+
+    if len(argv[0] != 2):
+        print("Error : Invalid number of aurguments")
         exit()
 
-    if (argv[1]=="-h") or (argv[1]=="-H"):
-        print("This script is use to traverse specific directory")
+    if (argv[1]=='-h') or (argv[1]=='-H'):
+        print("This script is use to traverse specific directory and delete duplicate files")
         exit()
 
-    if (argv[1]=="-u") or (argv[1]=="-U"):
-        print("Usage : ApplicationName AbsolutePath_of_Directory")
+    if (argv[1]=='-u') or (argv[1]=='-U'):
+        print("Usage : ApplicationName AbsolutePath_of_Directory_extension")
         exit()
 
     try:
-        DirectoryWatcher(argv[1])
+        arr = DisplayChecksum(argv[1])
 
     except ValueError:
         print("Error : Invalid datatype of input")
 
-    except Exception:
-        print("Error : Invalid Input")
-
-def main():
+    except Exception as E:
+        print("Error : Invalid input", E)
 
 if __name__=="__main__":
     main()
