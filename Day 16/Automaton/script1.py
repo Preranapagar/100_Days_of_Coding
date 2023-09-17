@@ -32,14 +32,14 @@ def DisplayChecksum(path):
                 print(file_hash)
                 print(' ')
 
-        else:
-            print("Invalid Path")
+    else:
+        print("Invalid Path")
 
 def main():
     print("__________________________________________Application__________________________________________")
     print("Application Name :", argv[0])
 
-    if len(argv[0] != 2):
+    if len(argv) != 2:
         print("Error : Invalid number of aurguments")
         exit()
 
