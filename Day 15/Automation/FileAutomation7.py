@@ -12,10 +12,8 @@ def DirectoryTravel(DirName):
 
     exist = os.path.isdir(DirName)
 
-    if exist:
+    if (exist == True):
         for foldername, subfoldername, filename in os.walk(DirName):
-            print("Current Directory name : ",foldername)
-                
             for fname in filename:
                 print(fname, " : ", os.path.getsize(os.path.join(foldername,fname)), " bytes")
         
