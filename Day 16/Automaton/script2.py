@@ -60,7 +60,7 @@ def main():
     print("_____________________________New Application_____________________________")
     print("Application name :"+argv[0])
 
-    if len(argv[0] != 2):
+    if len(argv) != 2:
         print("Error : Invalid number of aurguments")
         exit()
 
