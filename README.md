@@ -17,3 +17,4 @@ Daily Python Coding Challenge starting from 26.08.2023
 * {Day 14 :[Detect Capital, Perfect Number, Relative Ranks]}
 * {Day 15 :[Repeated Substring pattern, Counting Bits ,Automation using Python (File Automation)]}
 * {Day 16 :[Automation Using Python]}
+* {Day 17 :[Automation Scripts]}
