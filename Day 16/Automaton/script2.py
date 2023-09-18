@@ -33,9 +33,9 @@ def FindDuplicate(path):
                 path = os.path.join(dirName,filen)
                 file_hash = hashfile(path)
                 if file_hash in dups:
-                    dups[file_hash].append(path)
+                    dups[file_hash].append(filen)
                 else:
-                    dups[file_hash]=[path]
+                    dups[file_hash]=[filen]
         return dups
     else:
         print("Invalid path")
@@ -45,10 +45,16 @@ def PrintDuplicate(dict1):
 
     if len(results)>0:
         print("Duplicates found :")
-        print("Following files are identical :")
 
-        icnt = 0
         for result in results:
+            print("Following files are identical :")
+            for subresult in result:
+                print(subresult)
+            print()
+        
+        print("Following files are duplicate :")
+        for result in results:
+            icnt = 0
             for subresult in result:
                 icnt += 1
                 if icnt >= 2:
