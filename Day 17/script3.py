@@ -66,6 +66,17 @@ def RemoveDups(dict1):
 
 
 def main():
+    print("--------------------------Automation Script--------------------------")
+    print("Script Name :", argv[0])
+
+    if argv[1]=='-h' or argv[1]=='-H':
+        print("This script is use to remove duplicate file in given directory")
+        exit()
+
+    elif argv[1]=='-u' or argv[1]=='-U':
+        print("Usage : Application_Name Absolute_Path_of_Directory")
+        print("Example : Script.py Demo")
+        exit()
 
     if len(argv) !=2:
         print("Invalid number of arguments")
