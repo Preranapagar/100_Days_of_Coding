@@ -12,6 +12,7 @@ yellow = '#ffb700'
 screen.title('Ganpati Bappa')
 ganpati.shape('turtle')
 
+#pentagon
 ganpati.color(blue,blue)
 ganpati.begin_fill()
 ganpati.left(angle = 130)
@@ -32,9 +33,119 @@ ganpati.left(90)
 ganpati.forward(12.5)
 ganpati.pendown()
 
+#square
 ganpati.color(yellow,yellow)
 ganpati.begin_fill()
 ganpati.forward(90)
+for i in range(3):
+    ganpati.left(90)
+    ganpati.forward(90)
+ganpati.end_fill()
+
+ganpati.penup()
+ganpati.forward(10)
+ganpati.pendown()
+
+#rectangle 1
+
+ganpati.color(red,red)
+ganpati.begin_fill()
+
+for i in range(2):
+    ganpati.forward(27.5)
+    ganpati.right(90)
+    ganpati.backward(90)
+    ganpati.right(90)
+
+ganpati.penup()
+ganpati.right(180)
+ganpati.forward(137.5)
+ganpati.pendown()
+
+#rectangle 2
+for i in range(2):
+    ganpati.backward(27.5)
+    ganpati.right(90)
+    ganpati.forward(90)
+    ganpati.right(90)
+ganpati.end_fill()
+
+ganpati.penup()
+ganpati.left(180)
+ganpati.forward(57.5)
+ganpati.left(90)
+ganpati.forward(5)
+ganpati.left(90)
+ganpati.pendown()
+
+#bindiline
+ganpati.color(white)
+ganpati.backward(50)
+
+ganpati.penup()
+ganpati.right(90)
+ganpati.forward(5)
+ganpati.left(90)
+ganpati.pendown()
+
+
+#bindiline 2
+ganpati.forward(50)
+ganpati.penup()
+ganpati.right(90)
+ganpati.forward(5)
+ganpati.left(90)
+ganpati.pendown()
+
+#bindiline 3
+ganpati.backward(50)
+ganpati.penup()
+ganpati.right(90)
+ganpati.forward(10)
+ganpati.pendown()
+
+#eye1
+ganpati.color(black,black)
+ganpati.begin_fill()
+ganpati.circle(5)
+
+ganpati.penup()
+ganpati.left(90)
+ganpati.forward(50)
+ganpati.pendown()
+
+#eye2
+ganpati.circle(5)
+ganpati.end_fill()
+
+ganpati.penup()
+ganpati.right(180)
+ganpati.forward(30)
+ganpati.left(90)
+ganpati.forward(25)
+ganpati.pendown()
+
+#Nose
+ganpati.color(red,red)
+ganpati.begin_fill()
+ganpati.forward(100)
+ganpati.left(90)
+ganpati.forward(50)
+ganpati.left(90)
+ganpati.forward(20)
+ganpati.left(90)
+ganpati.forward(30)
+ganpati.left(90)
+ganpati.forward(30)
+ganpati.end_fill()
+
+#finisher
+
+ganpati.penup()
+ganpati.forward(1000)
+
+screen.mainloop()
+
 
 
 
