@@ -19,4 +19,4 @@ Daily Python Coding Challenge starting from 26.08.2023
 * {Day 16 :[Automation Using Python]}
 * {Day 17 :[Automation Scripts]}
 * {Day 18 :[Printing Ganesha using python]}
-* {Day 19 :[]}
+* {Day 19 :[Perfect Square]}
