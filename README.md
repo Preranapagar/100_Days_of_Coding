@@ -20,3 +20,4 @@ Daily Python Coding Challenge starting from 26.08.2023
 * {Day 17 :[Automation Scripts]}
 * {Day 18 :[Printing Ganesha using python]}
 * {Day 19 :[Perfect Square, Finding unique character]}
+* {Day 20 :[Assign Cookies]}
