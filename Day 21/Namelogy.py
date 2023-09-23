@@ -15,16 +15,34 @@ def Numerical(string):
                 key_val.append(key)
 
     total = sum(key_val)
-    print(total)
+    print("You Name total :",total)
+
+def Birth_Num(date):
+    from datetime import datetime
+
+    date = datetime.strptime(date,'%d/%m/%Y').date()
+    birthday = str(date.day)
+
+    birthnum = 0
+    for i in birthday:
+        birthnum += int(i)
+
+    print("Your ",birthnum)    
+    
+
+
+def Life_path(date):
+    pass
 
 
 
 def main():
+    Name = 'Prerana Pagar'#input("Enter your name :")
+    Birthdate = '03/12/1995' #input("Enter your birthday in fotmat (dd/mm/yyyy):")
 
-    # Name = input("Enter your name :")
-    n = 'Prerana Pagar'
 
-    Numerical(n)
+    Numerical(Name)
+    Birth_Num(Birthdate)
 
 if __name__=="__main__":
     main()
