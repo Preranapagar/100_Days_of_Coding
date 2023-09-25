@@ -38,6 +38,10 @@ def main():
     print("--------------------------Automation Script--------------------------")
     print("Script Name :", argv[0])
 
+    if len(argv) !=2:
+        print("Invalid number of arguments")
+        exit()
+
     if argv[1]=='-h' or argv[1]=='-H':
         print("This script is use to get the name and checksum of files in given directory")
         exit()
@@ -47,8 +51,6 @@ def main():
         print("Example : Script.py Demo")
         exit()
 
-    if len(argv) !=2:
-        print("Invalid number of arguments")
 
     else:
 

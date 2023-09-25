@@ -36,6 +36,7 @@ def main():
 
     if len(argv) !=2:
         print("Invalid Number of arguments")
+        exit()
 
     if (argv[1]=='-h' or argv[1]=='-H'):
         print("This automation script is use to find the largest file in directory")
