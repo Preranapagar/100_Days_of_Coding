@@ -34,6 +34,9 @@ def main():
     print("---------------------------------------Automation Script---------------------------------------")
     print("Script Name :", argv[0])
 
+    if len(argv) !=2:
+        print("Invalid Number of arguments")
+
     if (argv[1]=='-h' or argv[1]=='-H'):
         print("This automation script is use to find the largest file in directory")
         exit()
@@ -42,9 +45,6 @@ def main():
         print("Usage : Name_of_script First Argument")
         print("Example : Script.py Demo")
         exit()
-
-    if len(argv) !=2:
-        print("Invalid Number of arguments")
     
     else:
         starttime = time.time()

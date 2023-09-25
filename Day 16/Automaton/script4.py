@@ -30,14 +30,15 @@ def main():
     print("--------------------------Automation Script--------------------------")
     print("Automation script name :", argv[0])
 
-    if (argv[1]=="-h" or argv[1]=="-H"):
-        print("This script is used to perform remove the given file from directory")
-        exit()
+    if len(argv)==2:
+        if (argv[1]=="-h" or argv[1]=="-H"):
+            print("This script is used to perform remove the given file from directory")
+            exit()
 
-    elif(argv[1]=="-u" or argv[1]=="-U"):
-        print("Usage : Name_of_script First_aurgument Second_aurgument")
-        print("Example Demo.py Python file.txt")
-        exit()
+        elif(argv[1]=="-u" or argv[1]=="-U"):
+            print("Usage : Name_of_script First_aurgument Second_aurgument")
+            print("Example Demo.py Python file.txt")
+            exit()
 
     if len(argv) != 3:
         print("Invalid Number of aurguments")
