@@ -27,6 +27,8 @@ def Birth_Num(date):
     for i in birthday:
         birthnum += int(i)
 
+    while birthnum >= 10:
+        
     print("Your ",birthnum)    
     
 
