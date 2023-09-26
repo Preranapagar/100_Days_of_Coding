@@ -22,4 +22,4 @@ Daily Python Coding Challenge starting from 26.08.2023
 * {Day 19 :[Perfect Square, Finding unique character]}
 * {Day 20 :[Assign Cookies]}
 * {Day 21 :[Name Numerology]}
-* {Day 22 :[Creating log file, Getting Specific extention files from directory]}
+* {Day 22 :[Creating log file, Getting Specific extention files from directory, Rename file's current extension with given extension]}
