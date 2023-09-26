@@ -67,6 +67,8 @@ def main():
 
         except Exception as E:
             print("Error :", E)
+    else:
+        print("Invalid Number of Aurguments")
 
 if __name__ =="__main__":
     main()
