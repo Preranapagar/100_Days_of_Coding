@@ -3,6 +3,25 @@
 from sys import *
 import os
 
+def RenameFile(Dirname,ext1,ext2):
+    print("Scanning through Directory........"+Dirname)
+
+    flag = os.path.isabs(Dirname)
+    if flag == False:
+        Dirname = os.path.abspath(Dirname)
+
+    exist = os.path.isdir(Dirname)
+
+    if exist:
+        for Dirname, foldername, filename in os.walk(Dirname):
+            for fname in filename:
+                f_name = os.path.splitext(fname)[0]
+                f_ext = os.path.splitext(fname)[1]
+                if ext1 == f_ext:
+                    os.rename(fname,f_name+ext2)
+    else:
+        print("Invalid Path Given")
+
 def main():
     print("-"*55,"Automation Script","-"*55)
     print("Automation Script Name :", argv[0])
@@ -20,7 +39,18 @@ def main():
             exit()
 
     if len(argv)==4:
-        pass
+
+        Directory = argv[1]
+        current_ext = argv[2]
+        new_ext = argv[3]
+
+        try:
+            RenameFile(Directory, current_ext, new_ext)
+            
+        except ValueError:
+            print("Invalid input datatype")
+        except Exception as E:
+            print("Error :", E)
     else:
         print("Invalid Number of Aurguments")
 
