@@ -21,7 +21,11 @@ def CheckDir(dir,ext):
                 if f_ext == ext:
                     file_path = os.path.join(dirname,fname)
                     Files.append(file_path)
-        return parent_path,Files
+        if len(Files)>=1:
+            return Files , parent_path
+        else:
+            print("File with given extension are not in current directory")
+            exit()
     else:
         print("Invalid Path")
 
@@ -37,7 +41,6 @@ def CreateDirectory(path, dir):
             os.mkdir(new_path)
             print("New Directory Created")
             return new_path
-        
         except OSError as e:
             print("Error :", e)
 
@@ -77,8 +80,10 @@ def main():
             file_ext = argv[3]
 
             result = CheckDir(source_dir,file_ext)
-            arr = CreateDirectory(result[0],destination_dir)
-            CopyingFiles(result[1],arr)
+
+            new_result = CreateDirectory(result[1],destination_dir)
+
+            CopyingFiles(result[0],new_result[0])
 
         except ValueError:
             print("Invalid input datatype")
