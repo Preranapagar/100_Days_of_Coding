@@ -5,7 +5,8 @@ from sys import *
 import os
 import shutil
 
-def CheckDirectory(Dirname):
+
+def CheckDirectory(Dirname,Dirname2):
     print("Scanning directory :", Dirname)
 
     flag = os.path.isabs(Dirname)
@@ -14,31 +15,27 @@ def CheckDirectory(Dirname):
 
     exist = os.path.isdir(Dirname)
     if exist:
-        parent_directory = os.path.dirname(Dirname)
-
-        return Dirname , parent_directory
+        CopyData(Dirname,Dirname2)
         
     else:
         print("Invalid Directory Path")
 
-def NewDirectory(path,name):
-    new_path = os.path.join(path,name)
-
-    exist = os.path.isdir(new_path)
-
-    if exist:
-        print("Directory with given name already exist please given different name")
-    else:
-        try:
-            os.mkdir(new_path)
-            print("New Directory Created")
-            return new_path
-        
-        except OSError as e:
-            print("An error occured :", e)
 
 def CopyData(firstDir, secondDir):
-    pass
+    flag = os.path.isdir(secondDir)
+
+    if flag:
+        print("Directory alredy exists, please give diffrent name")
+        
+    else:
+        try:
+            shutil.copytree(firstDir,secondDir)
+            print("Data Copied Successfully")
+        except OSError as e:
+            print("bhai edhar ko he problem")
+            print("An error occured :", e)
+
+    
 
 def main():
     print("-"*55,"Automation Script","-"*55)
@@ -62,8 +59,8 @@ def main():
             Current_directory = argv[1]
             new_directory = argv[2]
 
-            arr = CheckDirectory(Current_directory)
-            NewDirectory(arr[1],new_directory)
+            CheckDirectory(Current_directory, new_directory)
+
 
         except ValueError:
             print("Invalid input datatype")
