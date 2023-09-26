@@ -3,6 +3,42 @@
 
 from sys import *
 import os
+import shutil
+
+def CheckDirectory(Dirname):
+    print("Scanning directory :", Dirname)
+
+    flag = os.path.isabs(Dirname)
+    if flag == False:
+        Dirname = os.path.abspath(Dirname)
+
+    exist = os.path.isdir(Dirname)
+    if exist:
+        parent_directory = os.path.dirname(Dirname)
+
+        return Dirname , parent_directory
+        
+    else:
+        print("Invalid Directory Path")
+
+def NewDirectory(path,name):
+    new_path = os.path.join(path,name)
+
+    exist = os.path.isdir(new_path)
+
+    if exist:
+        print("Directory with given name already exist please given different name")
+    else:
+        try:
+            os.mkdir(new_path)
+            print("New Directory Created")
+            return new_path
+        
+        except OSError as e:
+            print("An error occured :", e)
+
+def CopyData(firstDir, secondDir):
+    pass
 
 def main():
     print("-"*55,"Automation Script","-"*55)
@@ -25,6 +61,9 @@ def main():
         try:
             Current_directory = argv[1]
             new_directory = argv[2]
+
+            arr = CheckDirectory(Current_directory)
+            NewDirectory(arr[1],new_directory)
 
         except ValueError:
             print("Invalid input datatype")
