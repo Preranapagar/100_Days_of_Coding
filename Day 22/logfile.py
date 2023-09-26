@@ -1,8 +1,9 @@
+from sys import *
 
 def MyFunction():
     result = 'This is my function'
-
-    fobj = open('result.log','w')
+    name = f"{argv[1]}.log"
+    fobj = open(name,'w')
     fobj.write(result)
     fobj.close()
 
