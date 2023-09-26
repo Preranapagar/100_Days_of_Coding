@@ -60,12 +60,18 @@ def main():
             exit()
 
     if len(argv)==3:
-        Directory = argv[1]
-        file_extention = argv[2]
+        try:
+            Directory = argv[1]
+            file_extention = argv[2]
 
-        result =CheckDirectory(Directory,file_extention)
-        CheckFiles(result)
-        
+            result =CheckDirectory(Directory,file_extention)
+            CheckFiles(result)
+        except ValueError:
+            print("Invalid input datatype")
+
+        except Exception as E:
+            print("Error :", E)
+            
     else:
         print("Invalid Number of Aurguments")
 if __name__ == "__main__":
