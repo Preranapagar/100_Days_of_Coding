@@ -18,7 +18,16 @@ def RenameFile(Dirname,ext1,ext2):
                 f_name = os.path.splitext(fname)[0]
                 f_ext = os.path.splitext(fname)[1]
                 if ext1 == f_ext:
-                    os.rename(fname,f_name+ext2)
+                    c_name = os.path.join(Dirname,fname)
+                    n_name = os.path.join(Dirname,f_name+ext2)
+
+                    try:
+                        os.rename(c_name,n_name)
+                    except OSError as e:
+                        print("An error occured :", e)
+
+        print("File renamed successfully")
+
     else:
         print("Invalid Path Given")
 
@@ -46,7 +55,7 @@ def main():
 
         try:
             RenameFile(Directory, current_ext, new_ext)
-            
+
         except ValueError:
             print("Invalid input datatype")
         except Exception as E:
