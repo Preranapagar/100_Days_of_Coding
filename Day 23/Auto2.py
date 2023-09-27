@@ -34,12 +34,22 @@ def CheckDirectory(Dirname):
                 f_path = os.path.join(dirname,fname)
                 file_Checksum = CheckSum(f_path)
                 Hash_dict[fname] = file_Checksum
+        print("Checksum calculated")
         return Hash_dict
+        
     else:
         print("Invalid Directory Path")
 
-def CreateLog():
-    pass
+def CreateLog(logs, name):
+    timestamp = dt.datetime.now().strftime('%d-%b-%H-%M-%S')
+    log_name = name+timestamp
+    with open(log_name,'a') as log:
+        for key , value in logs.items():
+            data = f'{key} :{value}\n'
+            log.write(data)
+    log.close()
+    print("Log created")
+    
 
  
 def main():
@@ -51,16 +61,17 @@ def main():
         exit()
     else:
         if argv[1]=='h' or argv[1]=='H':
-            print("This script use to copy files with specific extension from given directory to another")
+            print("This script use to calculate checksum of files in given directory")
             exit()
 
         elif argv[1]=='u' or argv[1]=='U':
-            print("Usage : Script_Name First_Aurgument Second_Aurgument Third_Aurgument")
-            print("Example : script.py Demo Temp .txt")
+            print("Usage : Script_Name First_Aurgument")
+            print("Example : script.py Demo")
             exit()
         else:
             try:
-                ChcekDirectory(argv[1])
+                arr = CheckDirectory(argv[1])
+                CreateLog(arr,argv[0])
 
             except Exception as e:
                 print("Error :", e)
