@@ -71,7 +71,7 @@ def main():
         else:
             try:
                 arr = CheckDirectory(argv[1])
-                CreateLog(arr,argv[0])
+                CreateLog(arr,argv[1])
 
             except Exception as e:
                 print("Error :", e)
