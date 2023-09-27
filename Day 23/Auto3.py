@@ -62,7 +62,7 @@ def main():
         exit()
     else:
         if argv[1]=='h' or argv[1]=='H':
-            print("This script use to duplicate files in given directory")
+            print("This script use to create log of duplicate files in given directory")
             exit()
 
         elif argv[1]=='u' or argv[1]=='U':
