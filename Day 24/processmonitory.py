@@ -64,3 +64,78 @@ def MailSender(filename,time):
     except Exception as e:
         print("Unable to send mail :", e)
 
+def ProcessLog(log_dir = "Marvellous"):
+    listprocess = []
+
+    if not os.path.exists(log_dir):
+        try:
+            os.mkdir(log_dir)
+        except:
+            pass
+
+    seperator = '-'*80
+    log_path = os.path.join(log_dir,"MarvellousLog%s.log"%(time.ctime()))
+    f = open(log_path,'w')
+    f.write(seperator+'\n')
+    f.write("Prerana Infosystem Process Logger :"+time.ctime()+'\n')
+    f.write(seperator+'\n')
+    f.write('\n')
+
+    for proc in psutil.process_iter():
+        try:
+            pinfo = proc.as_dict(attrs = ['pid','name','username'])
+            vms = proc.memory_info().vms/(1024*1024)
+            pinfo['vms'] = vms
+            listprocess.append(pinfo)
+        except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
+            pass
+
+    for ele in listprocess:
+        f.write("%s\n"%ele)
+
+    print("Log file successfully generated at location %s"%log_path())
+
+    connected = is_connected()
+
+    if connected:
+        starttime = time.time()
+        MailSender(log_path,time.ctime())
+        endtime = time.time()
+
+        print('Took %s second to send mail'%(endtime-starttime))
+    else:
+        print("There is no internet connection")
+
+def main():
+    print("Prerana Infosystem")
+    print("Application name :", argv[0])
+
+    if len(argv) !=2:
+        print("Invalid Number of Aurguments")
+        exit()
+
+    if argv[1]=='-h' or argv[1]=='-H':
+            print("This script use to create log records of running processes")
+            exit()
+
+    elif argv[1]=='-u' or argv[1]=='-U':
+        print("Usage : Script_Name First_Aurgument")
+        print("Example : script.py Demo")
+        exit()
+    
+    try:
+        schedule.every(int(argv[1])).minutes.do(ProcessLog)
+        while True:
+            schedule.run_pending()
+            time.sleep(1)
+
+    except ValueError:
+        print("Invalid data type of input")
+
+    except Exception as e:
+        print("Error :"+e)
+
+if __name__ == "__main__":
+    main()
+
+
