@@ -4,7 +4,7 @@
 import os
 import time
 import psutil
-import urllib2
+import urllib.request
 import smtplib
 import schedule
 from sys import *
@@ -15,9 +15,9 @@ from email.mime.multipart import MIMEMultipart
 
 def is_connected():
     try:
-        urllib2.urlopen('http://216.58.192.142', timeout = 1)
+        urllib.request.urlopen('http://216.58.192.142', timeout = 1)
         return True
-    except urllib2.URLError as err:
+    except urllib.request.URLError as err:
         return False
     
 def MailSender(filename,time):
