@@ -123,17 +123,18 @@ def main():
         print("Example : script.py Demo")
         exit()
     
-    try:
-        schedule.every(int(argv[1])).minutes.do(ProcessLog)
-        while True:
-            schedule.run_pending()
-            time.sleep(1)
+    else:
+        try:
+            schedule.every(int(argv[1])).minutes.do(ProcessLog)
+            while True:
+                schedule.run_pending()
+                time.sleep(1)
 
-    except ValueError:
-        print("Invalid data type of input")
+        except ValueError:
+            print("Invalid data type of input")
 
-    except Exception as e:
-        print("Error :"+e)
+        except Exception as e:
+            print("Error :"+e)
 
 if __name__ == "__main__":
     main()
