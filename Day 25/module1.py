@@ -6,8 +6,7 @@ def main():
 
     running_processes = pinfo.ProcessDisplay()
 
-    for process in running_processes:
-        print(process)
+    pinfo.CreateLog(running_processes)
 
 if __name__ == "__main__":
     main()
