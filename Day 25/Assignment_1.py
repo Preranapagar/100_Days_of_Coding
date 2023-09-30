@@ -5,7 +5,6 @@ import pinfo
 
 def main():
     print("Automation Script :"+argv[0])
-
     running_process = pinfo.ProcessDisplay()
 
     if len(argv) == 1:
