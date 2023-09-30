@@ -1,18 +1,18 @@
 
-from sklearn import *
+from sklearn import tree
 
 def main():
     print("Ball Classification case study")
 
-    BallFeatures = [[35,'Rough'],[47,'Rough'],[90,'Smooth'],[48,'Rough'],
-                    [90,'Smooth'],[35,'Rough'],[92,'Smooth'],[35,'Rough'],
-                    [35,'Rough'],[35,'Rough'],[96,'Smooth'],[43,'Rough'],
-                    [110,'Smooth'],[35,'Rough'],[95,'Smooth']]
+    BallFeatures = [[35,1],[47,1],[90,0],[48,1],[90,0],[35,1],[92,0],[35,1],[35,1],[35,1],[96,0],[43,1],[110,0],[35,1],[95,0]]
 
-    Labels = ['Tennis','Tennis','Cricket','Tennis',
-              'Cricket','Tennis','Cricket','Tennis',
-              'Tennis','Tennis','Cricket','Tennis',
-              'Cricket','Tennis','Cricket']
+    Labels = ['Tennis','Tennis','Cricket','Tennis','Cricket','Tennis','Cricket','Tennis','Tennis','Tennis','Cricket','Tennis','Cricket','Tennis','Cricket']
+    
+    obj = tree.DecisionTreeClassifier()
+
+    obj = obj.fit(BallFeatures,Labels)
+
+    print(obj.predict([36,1],[91,0]))
 
 if __name__=="__main__":
     main()
