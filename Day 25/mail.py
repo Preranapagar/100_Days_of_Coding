@@ -125,7 +125,7 @@ def main():
     
     else:
         try:
-            schedule.every(int(argv[1])).minutes.do(ProcessLog)
+            schedule.every(1).minutes.do(ProcessLog)
             while True:
                 schedule.run_pending()
                 time.sleep(1)
@@ -138,5 +138,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
