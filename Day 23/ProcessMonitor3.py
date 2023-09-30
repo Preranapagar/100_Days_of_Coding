@@ -18,7 +18,7 @@ def ProcessDisplay(log_dir='Ganesha'):
     current_time = datetime.datetime.now()
     timestamp = current_time.strftime('%d_%b_%y-%H_%M_%S')
     seperator = '-'*80
-    log_path = os.path.join(log_dir,"GaneshaLog_%s.log"%(timestamp))
+    log_path = os.path.join(log_dir,"%sLog_%s.log"%(log_dir,timestamp))
     f = open(log_path,'w')
     f.write(seperator+'\n')
     f.write("Process Logger :"+time.ctime()+'\n')
