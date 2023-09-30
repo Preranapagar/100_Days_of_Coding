@@ -3,6 +3,7 @@
 
 import os
 import time
+import datetime as ds
 import psutil
 import urllib.request
 import smtplib
@@ -73,8 +74,11 @@ def ProcessLog(log_dir = "Marvellous"):
         except:
             pass
     
+    current_time = ds.datetime.now()
+    timestamp = current_time.strftime('%d_%b_%y-%H-%M-%S')
+
     seperator = '-'*80
-    log_path = os.path.join(log_dir,"MarvellousLog%s.log"%(time.ctime()))
+    log_path = os.path.join(log_dir,"MarvellousLog%s.log"%(timestamp))
     f = open(log_path,'w')
     f.write(seperator+'\n')
     f.write("Prerana Infosystem Process Logger :"+time.ctime()+'\n')
@@ -93,7 +97,7 @@ def ProcessLog(log_dir = "Marvellous"):
     for ele in listprocess:
         f.write("%s\n"%ele)
 
-    print("Log file successfully generated at location %s"%log_path())
+    print("Log file successfully generated at location %s"%(log_path))
 
     connected = is_connected()
 
@@ -125,7 +129,7 @@ def main():
     
     else:
         try:
-            schedule.every(1).minutes.do(ProcessLog)
+            schedule.every(2).minutes.do(ProcessLog)
             while True:
                 schedule.run_pending()
                 time.sleep(1)
