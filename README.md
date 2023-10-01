@@ -25,5 +25,5 @@ Daily Python Coding Challenge starting from 26.08.2023
 * {Day 22 :[Creating log file, Getting Specific extention files from directory, Rename file's current extension with given extension, Copying data from one directory to another, Copying files with specific extension to new directory]}
 * {Day 23 : Process Monitor}
 * {Day 24 : Process Monitor}
-* {Day 25 : Problem Solving of Process Monitor, Ball Classification Cas Study}
+* {Day 25 : Problem Solving of Process Monitor, Ball Classification Case Study}
 * {Day 26 :}

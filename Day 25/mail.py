@@ -54,7 +54,7 @@ def MailSender(filename,time):
         msg.attach(p)
         s = smtplib.SMTP('smtp.gmail.com',587)
         s.starttls()
-        s.login(fromaddr,"---------")
+        s.login(fromaddr,"-------")
 
         text = msg.as_string()
         s.sendmail(fromaddr,toaddr,text)

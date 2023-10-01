@@ -12,7 +12,7 @@ def main():
 
     obj = obj.fit(BallFeatures,Labels)
 
-    print(obj.predict([36,1],[91,0]))
+    print(obj.predict([[36,1],[91,0]]))
 
 if __name__=="__main__":
     main()
