@@ -109,7 +109,7 @@ def ProcessLog(log_dir = "Marvellous"):
         print('Took %s second to send mail'%(endtime-starttime))
     else:
         print("There is no internet connection")
-
+    
 def main():
     print("Prerana Infosystem")
     print("Application name :", argv[0])
