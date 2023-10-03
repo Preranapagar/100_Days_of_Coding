@@ -28,4 +28,4 @@ Daily Python Coding Challenge starting from 26.08.2023
 * {Day 25 : [Problem Solving of Process Monitor, Ball Classification Case Study]}
 * {Day 26 : [BallCase]}
 * {Day 27 : [Check Internet Connection]}
-* {Day 28 : []}
+* {Day 28 : [Create a log of deleted files and send it through mail]}
