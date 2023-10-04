@@ -39,7 +39,7 @@ def main():
         exit()
 
     if argv[1]=='-h' or argv[1]=='-H':
-            print("This script use to create log records of running processes")
+            print("This script use to create csv records of running processes")
             exit()
 
     elif argv[1]=='-u' or argv[1]=='-U':
@@ -48,7 +48,11 @@ def main():
         exit()
     
     else:
-
+        try:
+            running_proc = Process_Log()
+            Create_csv(running_proc)
+        except Exception as e:
+            print("Error :", e)
 
 if __name__=="__main__":
     main()
