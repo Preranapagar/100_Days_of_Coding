@@ -2,6 +2,7 @@ import csv
 from sys import *
 import os
 import psutil
+import datetime as ds
 
 def Process_Log():
     listprocess = []
@@ -19,7 +20,9 @@ def Create_csv(process,dirname):
     if not os.path.exists(dirname):
         os.mkdir(dirname)
 
-    filename = 'process.csv'
+    timestamp = ds.datetime.now().strftime('%d-%b-%y_%H-%M-%S')
+
+    filename = 'process_%s.csv'%(timestamp)
     path = os.path.join(dirname,filename)
 
     with open(path,'w',newline="") as csv_file:
@@ -27,6 +30,8 @@ def Create_csv(process,dirname):
 
         for row in process:
             csv_writer.writerow(row)
+
+    csv_file.close()
 
     print("CSV log file created successfully")
 
@@ -50,7 +55,11 @@ def main():
     else:
         try:
             running_proc = Process_Log()
-            Create_csv(running_proc)
+
+            for i in running_proc:
+                print(i)
+
+            Create_csv(running_proc,argv[1])
         except Exception as e:
             print("Error :", e)
 
