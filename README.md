@@ -27,5 +27,6 @@ Daily Python Coding Challenge starting from 26.08.2023
 * {Day 24 : [Process Monitor]}
 * {Day 25 : [Problem Solving of Process Monitor, Ball Classification Case Study]}
 * {Day 26 : [BallCase]}
-* {Day 27 : [Check Internet Connection]}
-* {Day 28 : [Create a log of deleted files and send it through mail]}
+* {Day 27 : [Python Script to check Internet Connection]}
+* {Day 28 : [Python script to delet duplicates from given directory, create log of deleted files and send it through mail]}
+* {Day 29 : [Python Script to create a CSV file to display running processes in your system]}
