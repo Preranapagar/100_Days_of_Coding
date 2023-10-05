@@ -8,7 +8,8 @@ from datetime import datetime
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from email.mime.application import MIMEApplication 
+from email.mime.application import MIMEApplication
+
 
 def ProcessLog():
     listprocess = []
@@ -73,20 +74,33 @@ def MailSender(path,mail_id):
 
     msg.attach(MIMEText(Message,'plain'))
 
-    with open(path,'rb') as attachment:
-        part = MIMEApplication(attachment.read(), Name = path)
-        part['Content-Disposition']
+    attachment = open(path,'rb')
+    base = MIMEApplication(attachment.read(), Name = path)
+    base['Content-Disposition'] = "attachemnt; filename = %s"%path
+    
+    msg.attach(base)
 
+    try:
+        server = smtplib.SMTP('smtp.gmail.com', 587)
+        server.starttls()
+        server.login(sender_email,sender_passcode)
+        server.sendmail(sender_email,receiver_email,msg.as_string())
+        server.quit()
+
+        print("Email send successfully !")
+    
+    except Exception as e:
+        print("Failed to send mail :", e)
 
     
 def main():
     print("Name of Automation script :", argv[0])
     
     process = ProcessLog()
-    Create_CSV(process,argv[1])
+    log_path = Create_CSV(process,argv[1])
 
     if is_connected():
-        MailSender(argv[2])
+        MailSender(log_path,argv[2])
     else:
         print("Internet is not connected")
 
