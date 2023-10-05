@@ -8,7 +8,7 @@ def ProcessLog():
     listprocess = []
     try:
         for process in psutil.process_iter(attrs=['pid','name','username']):
-            proc_info = process.info()
+            proc_info = process.info
             listprocess.append([
                 proc_info['pid'],
                 proc_info['name'],
@@ -24,7 +24,7 @@ def Create_CSV(process,dirname):
         os.mkdir(dirname)
 
     timestamp = datetime.now().strftime("%d-%b-%y_%H-%M-%S")
-    filename = "Dirname_%s.csv"%timestamp
+    filename = "%s_%s.csv"%(dirname,timestamp)
     filepath = os.path.join(dirname,filename)
 
     with open(filepath,'w',newline="") as csv_file:
