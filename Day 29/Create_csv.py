@@ -7,10 +7,14 @@ import datetime as ds
 def Process_Log():
     listprocess = []
     try:
-        for proc in psutil.process_iter():
-            pinfo = proc.as_dict(attrs=['pid','name','username'])
-            listprocess.append(pinfo)
-    
+        for proc in psutil.process_iter(attrs=['pid','name','username']):
+            process_data=proc.info
+            listprocess.append([
+                process_data['pid'],
+                process_data['name'],
+                process_data['username']
+            ])
+
     except (psutil.NoSuchProcess,psutil.AccessDenied, psutil.ZombieProcess):
         pass
     
@@ -27,9 +31,8 @@ def Create_csv(process,dirname):
 
     with open(path,'w',newline="") as csv_file:
         csv_writer = csv.writer(csv_file)
-
-        for row in process:
-            csv_writer.writerow(row)
+        csv_writer.writerow(['PID','Name','Username'])
+        csv_writer.writerows(process)
 
     csv_file.close()
 
@@ -55,11 +58,8 @@ def main():
     else:
         try:
             running_proc = Process_Log()
-
-            for i in running_proc:
-                print(i)
-
             Create_csv(running_proc,argv[1])
+            
         except Exception as e:
             print("Error :", e)
 
