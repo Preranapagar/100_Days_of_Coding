@@ -1,12 +1,14 @@
 import psutil
 from sys import *
 import os
+import time
 import csv
 import requests
 from datetime import datetime
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+from email.mime.application import MIMEApplication 
 
 def ProcessLog():
     listprocess = []
@@ -48,12 +50,32 @@ def is_connected():
     else:
         return False
     
-def MailSender(mail_id):
+def MailSender(path,mail_id):
     #configuration setup
-    sender_email = input()
-    sender_passcode = input()
+    sender_email = input("Enter Your Mail ID :")
+    sender_passcode = input("Enter Your Password")
     receiver_email = mail_id
 
+    #Mail
+    
+    Subject = "Log of Running Processes created at : %s"%(time.ctime())
+    Message = """Hello Sir/Madam, 
+    This email contains log of all the running processes on your system.
+    This is auto generated email.
+
+    Thank you,
+    Team"""
+
+    msg = MIMEMultipart()
+    msg['From'] = sender_email
+    msg['To'] = receiver_email
+    msg['Subject'] = Subject
+
+    msg.attach(MIMEText(Message,'plain'))
+
+    with open(path,'rb') as attachment:
+        part = MIMEApplication(attachment.read(), Name = path)
+        part['Content-Disposition']
 
 
     
