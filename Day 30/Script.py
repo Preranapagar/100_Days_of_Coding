@@ -2,7 +2,11 @@ import psutil
 from sys import *
 import os
 import csv
+import requests
 from datetime import datetime
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 
 def ProcessLog():
     listprocess = []
@@ -35,6 +39,22 @@ def Create_CSV(process,dirname):
     csv_file.close()
 
     print("CSV log generated.....")
+    return filepath
+
+def is_connected():
+    request = requests.get('http://www.google.com', timeout=1)
+    if request.status_code == 200:
+        return True
+    else:
+        return False
+    
+def MailSender(mail_id):
+    #configuration setup
+    sender_email = input()
+    sender_passcode = input()
+    receiver_email = mail_id
+
+
 
     
 def main():
@@ -42,6 +62,12 @@ def main():
     
     process = ProcessLog()
     Create_CSV(process,argv[1])
+
+    if is_connected():
+        MailSender(argv[2])
+    else:
+        print("Internet is not connected")
+
 
 if __name__=="__main__":
     main()
