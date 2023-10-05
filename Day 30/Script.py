@@ -54,7 +54,7 @@ def is_connected():
 def MailSender(path,mail_id):
     #configuration setup
     sender_email = input("Enter Your Mail ID :")
-    sender_passcode = input("Enter Your Password")
+    sender_passcode = input("Enter Your Password :")
     receiver_email = mail_id
 
     #Mail
@@ -87,7 +87,7 @@ def MailSender(path,mail_id):
         server.sendmail(sender_email,receiver_email,msg.as_string())
         server.quit()
 
-        print("Email send successfully !")
+        print("Email sent successfully !")
     
     except Exception as e:
         print("Failed to send mail :", e)
