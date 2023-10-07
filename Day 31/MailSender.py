@@ -49,7 +49,10 @@ def main():
             exit()
 
     try:
-        MailSender("receiver's mail ID")
+        if is_connected():
+            MailSender("receiver's mail ID")
+        else:
+            print("Internet is not connected")
 
     except ValueError:
         print("Error : Invalid datatype of input")
