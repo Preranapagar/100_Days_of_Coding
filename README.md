@@ -30,4 +30,5 @@ Daily Python Coding Challenge starting from 26.08.2023
 * {Day 27 : [Python Script to check Internet Connection]}
 * {Day 28 : [Python script to delet duplicates from given directory, create log of deleted files and send it through mail]}
 * {Day 29 : [Python Script to create a CSV file to display running processes in your system]}
-* {Day 30 : [Python Script to create a CSV file to displayy running processes and mail that csv file to given mailID , Send a Text mail to all the mail ID given in CSV]}
+* {Day 30 : [Python Script to create a CSV file to displayy running processes and mail that csv file to given mailID]}
+* {Day 31 : []}
