@@ -32,3 +32,4 @@ Daily Python Coding Challenge starting from 26.08.2023
 * {Day 29 : [Python Script to create a CSV file to display running processes in your system]}
 * {Day 30 : [Python Script to create a CSV file to displayy running processes and mail that csv file to given mailID]}
 * {Day 31 : [Mail Sender]}
+* {Day 32 : [Pandas]}
