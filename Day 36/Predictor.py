@@ -13,15 +13,16 @@ def PlayPredictor(data_path,values):
 
     le = LabelEncoder()
 
-    def label_encoder(df):
-        encoded_df = df.copy()
-        for col in df.columns:
-            if df[col].dtype == 'objcet':
-                encoded_df[col] = le.fit_transform(df[col])
+    def Encoder(data):
+        encoded_data = features.copy()
 
-        return encoded_df
+        for col in data.columns:
+            if data[col].dtype == 'object':
+                encoded_data[col] = le.fit_transform(data[col])
+
+        return encoded_data
     
-    encoded_df = label_encoder(features)
+    encoded_df = Encoder(features)
 
     print("endoced:",encoded_df)
     label = le.fit_transform(df['Play'])
