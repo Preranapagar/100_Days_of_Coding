@@ -9,16 +9,25 @@ def PlayPredictor(data_path,values):
     print("Size of Dataset :", df.shape)
     print("Columns :", df.columns)
 
+    features = df[['Whether','Temperature']]
+
     le = LabelEncoder()
 
-    features = df[['Whether','Temperature']]
-    feature_encoded = features.copy()
-    for col in features.columns:
-        feature_encoded = le.fit_transform(features[col])
+    def label_encoder(df):
+        encoded_df = df.copy()
+        for col in df.columns:
+            if df[col].dtype == 'objcet':
+                encoded_df[col] = le.fit_transform(df[col])
+
+        return encoded_df
+    
+    encoded_df = label_encoder(features)
+
+    print("endoced:",encoded_df)
     label = le.fit_transform(df['Play'])
 
     KNN_model = KNeighborsClassifier(n_neighbors = 3)
-    KNN_model.fit(feature_encoded,label)
+    KNN_model.fit(encoded_df,label)
 
     inputs = le.transform(values)
     Predicted = KNN_model.predict(inputs)
