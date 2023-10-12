@@ -36,3 +36,4 @@ Daily Python Coding Challenge starting from 26.08.2023
 * {Day 33 : [Pandas Application]}
 * {Day 34 : [MultiIndexing using pandas]}
 * {Day 35 : [xlsxwriter module]}
+* {Day 36 : []}
