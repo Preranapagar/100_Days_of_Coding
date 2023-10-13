@@ -2,9 +2,10 @@ import pandas as pd
 import numpy as np
 from sklearn.preprocessing import LabelEncoder
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn.model_selection import train_test_split
 
-def PlayPredictor(data_path,values):
-    df = pd.read_csv(data_path)
+def PlayPredictor(data,values):
+    df = data
     inputs = pd.DataFrame({'Whether':[values[0]],'Temperature':[values[1]]})
 
     whether_encoder = LabelEncoder()
@@ -35,10 +36,14 @@ def Inputs(W,T):
         exit()
     else:
         wether_dict = {1:'Overcast',2:'Rainy',3:'Sunny'}
-        temp_dict = {1:'Hot',2:'Cold',3:'Mild'}
+        temp_dict = {1:'Hot',2:'Cool',3:'Mild'}
         result = [wether_dict[W],temp_dict[T]]
 
     return result
+
+def CheckAccuracy(k=3):
+    pass
+
 
 def main():
     print("Play Predictor Application")
@@ -48,9 +53,10 @@ def main():
     print("Choose the current Temperature between 1.Hot 2.Cold 3.Mild")
     T = int(input("Temperature option :"))
 
+    df = pd.read_csv("PlayPredictor.csv")
     values = Inputs(W,T)
     
-    result =PlayPredictor("PlayPredictor.csv",values)
+    result =PlayPredictor(df,values)
     
     if result[0]==1:
         print("Yes, you can play")
