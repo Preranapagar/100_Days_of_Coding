@@ -2,7 +2,11 @@
 import requests
 import csv
 import os
+import re
+import smtplib
 from sys import *
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 def is_connected():
     request = requests.get("http://www.google.com", timeout = 1)
@@ -10,6 +14,40 @@ def is_connected():
         return True
     else:
         return False
+
+def MailSender(id):
+    #configure_setup
+    sender_email = "mail id"
+    sender_passcode = "password"
+    receiver_email = id
+
+    #Mail
+    
+    Subject = "Trial Mail"
+    Message = """Hello Sir/Ma'am,
+    Have a great day !
+    This is auto generated mail.
+    
+    Thank You,
+    Team XYZ"""
+
+    msg = MIMEMultipart()
+    msg['From'] = sender_email
+    msg['To'] = receiver_email
+    msg['Subject'] = Subject
+    msg.attach(MIMEText(Message,'plain'))
+
+    try :
+        server = smtplib.SMTP('smtp.gmail.com',587)
+        server.starttls()
+        server.login(sender_email,sender_passcode)
+        server.sendmail(sender_email,receiver_email,msg.as_string())
+        server.quit()
+
+        print("Email sent successfully")
+
+    except Exception as e:
+        print("Failed to sent mail :", e)
 
 
 def File_Reader(filename):
@@ -47,9 +85,15 @@ def main():
                 mail_id = File_Reader(argv[1])
 
                 if is_connected():
-        
+                    
                     for i in mail_id:
-                        print(i[0])
+                        pattern = r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+
+                        if re.match(pattern,i[0]):
+                            print(i[0])
+                            MailSender(i[0])
+                        else:
+                            pass
                 else:
                     print("No intenet connection")
 
