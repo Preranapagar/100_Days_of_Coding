@@ -37,4 +37,4 @@ Daily Python Coding Challenge starting from 26.08.2023
 * {Day 34 : [MultiIndexing using pandas]}
 * {Day 35 : [xlsxwriter module]}
 * {Day 36 : [Play Predictor using KNN algorithm]}
-* {Day 37 : []}
+* {Day 37 : [Application to send mail to mail ID provided in csv]}
