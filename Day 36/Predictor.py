@@ -5,33 +5,28 @@ from sklearn.neighbors import KNeighborsClassifier
 
 def PlayPredictor(data_path,values):
     df = pd.read_csv(data_path)
+    inputs = pd.DataFrame({'Whether':[values[0]],'Temperature':[values[1]]})
 
-    print("Size of Dataset :", df.shape)
-    print("Columns :", df.columns)
+    whether_encoder = LabelEncoder()
+    df['whether_encoded'] = whether_encoder.fit_transform(df['Whether'])
 
-    features = df[['Whether','Temperature']]
+    tem_encoder = LabelEncoder()
+    df['temp_encoded'] = tem_encoder.fit_transform(df['Temperature'])
 
-    le = LabelEncoder()
+    labels = LabelEncoder()
+    df['Target']=labels.fit_transform(df['Play'])
 
-    def Encoder(data):
-        encoded_data = features.copy()
+    X = df[['whether_encoded','temp_encoded']]
+    y = df['Target']
 
-        for col in data.columns:
-            if data[col].dtype == 'object':
-                encoded_data[col] = le.fit_transform(data[col])
-
-        return encoded_data
-    
-    encoded_df = Encoder(features)
-
-    print("endoced:",encoded_df)
-    label = le.fit_transform(df['Play'])
 
     KNN_model = KNeighborsClassifier(n_neighbors = 3)
-    KNN_model.fit(encoded_df,label)
+    KNN_model.fit(X,y)
 
-    inputs = le.transform(values)
-    Predicted = KNN_model.predict(inputs)
+    inputs['whether_encoded']=whether_encoder.transform(inputs['Whether'])
+    inputs['temp_encoded']=tem_encoder.transform(inputs['Temperature'])
+
+    Predicted = KNN_model.predict(inputs[['whether_encoded','temp_encoded']])
     return Predicted
 
 def Inputs(W,T):
@@ -56,7 +51,11 @@ def main():
     values = Inputs(W,T)
     
     result =PlayPredictor("PlayPredictor.csv",values)
-    print(result)
+    
+    if result[0]==1:
+        print("Yes, you can play")
+    elif result[0]==0:
+        print("No, yo cant play")
 
 if __name__=="__main__":
     main()
