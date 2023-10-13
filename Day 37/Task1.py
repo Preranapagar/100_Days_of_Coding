@@ -17,8 +17,8 @@ def is_connected():
 
 def MailSender(id):
     #configure_setup
-    sender_email = "mail id"
-    sender_passcode = "password"
+    sender_email = input("Enter your mail id :")
+    sender_passcode = input("Enter your password :")
     receiver_email = id
 
     #Mail
