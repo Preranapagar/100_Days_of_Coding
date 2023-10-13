@@ -51,6 +51,7 @@ def FileReader(path):
         csv_reader = csv.reader(f)
         for row in csv_reader:
             data.append(row)
+        f.close()
         return data
 
 

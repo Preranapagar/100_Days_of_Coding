@@ -50,7 +50,7 @@ def File_Reader(path):
 
         for row in csv_reader:
             data.append(row)
-
+        f.close()
         return data
 
 def main():
