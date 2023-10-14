@@ -1,6 +1,3 @@
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
 
 def Fun():
     
@@ -8,11 +5,17 @@ def Fun():
     X = [1,2,3,4,5]
     Y = [3,4,2,4,5]
 
-    # Least Square method
-    mean_x = np.mean(X)
-    mean_y = np.mean(Y)
-
     n = len(X)
+
+    sum_x =0
+    sum_y = 0
+
+    for i in range(n):
+        sum_x += X[i]
+        sum_y += Y[i]
+
+    mean_x = sum_x / n
+    mean_y = sum_x / n
 
     numerator = 0
     denomenator = 0
@@ -20,7 +23,7 @@ def Fun():
     # Equation of line is y = mx + c
 
     for i in range(n):
-        numerator += (X[i] -mean_x)*(Y[i] - mean_y)
+        numerator += (X[i] - mean_x)*(Y[i] - mean_y)
         denomenator += (X[i] - mean_x)**2
 
     m = numerator / denomenator
