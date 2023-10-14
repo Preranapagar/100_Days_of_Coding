@@ -62,7 +62,7 @@ def CustomKNeighbors():
     print(border)
     
     for i in range(len(data_test)):
-        print(f"ID : {i}, Label : {data.test[i]}, Features : {target.test[i]}")
+        print(f"ID : {i}, Label : {data_test[i]}, Features : {target_test[i]}")
     print(f"Size of test dataset {i+1}")
 
     print(border)
