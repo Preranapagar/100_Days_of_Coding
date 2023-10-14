@@ -38,4 +38,4 @@ Daily Python Coding Challenge starting from 26.08.2023
 * {Day 35 : [xlsxwriter module]}
 * {Day 36 : [Play Predictor using KNN algorithm]}
 * {Day 37 : [Application to send mail to mail ID provided in csv, Application to send given messages to mail from csv file, Application to schedule mail as per given date in csv file, Python Script to send text msg to numbers in given csv file]}
-* {Day 38 : [User defined KNN algorithm, Accuracy calculationn with Decision Tree and KNN]]}
+* {Day 38 : [User defined KNN algorithm, Accuracy calculationn with Decision Tree and KNN, WinePredictor using KNN algorithm]]}
