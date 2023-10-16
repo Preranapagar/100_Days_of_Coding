@@ -37,7 +37,7 @@ def HeadBrainPredictor():
 
     y = c + m * x
 
-    plt.plot(x,y, color ='#58b97', label = 'Regression Line')
+    plt.plot(x,y, color ='#58b970', label = 'Regression Line')
     plt.scatter(X,Y, color ='#ef5423', label = 'scatter plot')
     plt.xlabel('Head Size in cm3')
     plt.ylabel('Brain size in gram')
