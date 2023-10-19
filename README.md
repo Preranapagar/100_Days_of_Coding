@@ -42,4 +42,4 @@ Daily Python Coding Challenge starting from 26.08.2023
 * {Day 39 : [WinePredictor using KNN algorithm]}
 * {Day 40 : [User defined Linear regression algorithm]}
 * {Day 41 : [Clustering using K-mean algorithm]}
-* {Day 42 : []}
+* {Day 42 : [Diabetes Casestudy]}
