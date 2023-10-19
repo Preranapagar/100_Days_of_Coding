@@ -35,4 +35,14 @@ print("Accuracy on test set : {:.3f}".format(tree.score(X_test,y_test)))
 print("Feature importance : \n{}".format(tree.feature_importances_))
 
 def plot_feature_importance(model):
-    pass
+    plt.figure(figsize =(8,6))
+    n_features = 8
+    plt.barh(range(n_features), model.feature_importances_, align = 'center')
+    diabetes_features = [x for i, x in enumerate(df.columns) if i !=8]
+    plt.yticks(np.arange(n_features), diabetes_features)
+    plt.xlabel('Feature Importance')
+    plt.ylabel('Features')
+    plt.ylim(-1,n_features)
+    plt.show()
+
+plot_feature_importance(tree)
