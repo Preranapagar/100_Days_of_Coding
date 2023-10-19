@@ -34,7 +34,7 @@ print("Accuracy on test set : {:.3f}".format(rf.score(X_test,y_test)))
 print(sep)
 
 rf1 = RandomForestClassifier(max_depth =3, n_estimators = 100, random_state = 0)
-rf.fit(X_train, y_train)
+rf1.fit(X_train, y_train)
 
 print("Accuracy on training set : {:.3f}".format(rf1.score(X_train,y_train)))
 print("Accuracy on test set : {:.3f}".format(rf1.score(X_test,y_test)))
@@ -44,7 +44,7 @@ def plot_feature_importance(model):
     plt.figure(figsize =(8,6))
     n_features = 8
 
-    plt.barh(range(n_features),model.feature_importance_,align='center')
+    plt.barh(range(n_features),model.feature_importances_,align='center')
     df_features = [x for i, x in enumerate(df.columns) if i!=8]
     plt.yticks(np.arange(n_features),df_features)
     plt.xlabel('Feature importance')
