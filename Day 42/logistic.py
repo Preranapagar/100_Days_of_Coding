@@ -7,6 +7,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from warnings import simplefilter
 
+simplefilter(action='ignore',category = FutureWarning)
+
 print("Diabetes Predictor using Logistic Regression")
 sep = '-'*80
 print(sep)
