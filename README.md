@@ -45,3 +45,4 @@ Daily Python Coding Challenge starting from 26.08.2023
 * {Day 42 : [Diabetes Casestudy]}
 * {Day 43 : [Race condition]}
 * {Day 44 : [Python Interview questions]}
+* {Day 45 : [Ensemble Machine Learning Application]}
