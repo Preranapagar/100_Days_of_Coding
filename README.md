@@ -49,3 +49,4 @@ Daily Python Coding Challenge starting from 26.08.2023
 * {Day 46 : [Gihub codespace]}
 * {Day 47 : [Python program for pascal triangle]}
 * {Day 48 : [Find longest substring without repeating character]}
+* {Day 49 : [Find the median of two sorted array]}
