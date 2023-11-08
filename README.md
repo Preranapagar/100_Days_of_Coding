@@ -47,3 +47,4 @@ Daily Python Coding Challenge starting from 26.08.2023
 * {Day 44 : [Python Interview questions]}
 * {Day 45 : [Ensemble Machine Learning Application]}
 * {Day 46 : [Gihub codespace]}
+* {Day 47 : [Python program for pascal triangle]}
