@@ -54,3 +54,4 @@ Daily Python Coding Challenge starting from 26.08.2023
 * {Day 51 : [Convert string to interger]}
 * {Day 52 : [Creating matrix to excel and performing matrix operations]}
 * {Day 53 : [Creating matrix to excel and performing matrix operations]}
+* {Day 54 : [Matrix Problem Solution]}
