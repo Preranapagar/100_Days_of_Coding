@@ -12,8 +12,10 @@ import numpy as np
 def Read_Excel():
     filename = input("Enter Filename :")
     df = pd.read_excel(f'{filename}.xlsx')
-    matrix = df.values
-    print(matrix)
+    matrix_1 = df.iloc[0:3,0:3].values
+    matrix_2 = df.iloc[0:3,3:6].values
+    print(matrix_1)
+    print(matrix_2)
 
 def main():
     print("Matrix Operations")
